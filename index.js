@@ -11,16 +11,19 @@
  *  charFreq('data');
  *  // returns { a: 2, d: 1, t: 1 }
  */
+
 function charFreq(sentence) {
-  const obj = {}; arr = sentence.toLowerCase().split(""); wanted = /^[a-zA-Z]+$/; unwanted = /^[! .?0-9]/;
+  const obj = {}; 
+  const arr = sentence.toLowerCase().split(""); 
+  const wanted = /^[a-zA-Z]+$/; 
+  const unwanted = /^[! .?0-9]/;
 
   for (let i of arr) {
     if (obj[i] && i.match(wanted)) obj[i] += 1;
     else if (!i.match(unwanted)) obj[i] = 1;
   }
 
-  console.log(obj);
+  return obj;
 }
-
 
 charFreq("data");
